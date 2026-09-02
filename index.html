@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#85313c">
+  <title>Nita & Akbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <style>
+    :root {
+      --wine: #85313c;
+      --wine2: #a54b57;
+      --cream: #fffaf8;
+      --text: #3d3031;
+      --muted: #7e6b6d;
+      --white: #fff
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.8
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    h1,
+    h2,
+    h3,
+    .script {
+      font-family: "Cormorant Garamond", serif
+    }
+
+    .script {
+      font-style: italic
+    }
+
+    .opening {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(#0005, #0007), url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=85") center/cover fixed
+    }
+
+    .opening-inner {
+      padding: 36px 22px;
+      max-width: 780px
+    }
+
+    .eyebrow {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 11px
+    }
+
+    .opening h1 {
+      font-size: clamp(48px, 10vw, 92px);
+      line-height: .9;
+      margin: 20px 0
+    }
+
+    .guest {
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 500
+    }
+
+    .invite-text {
+      font-size: 14px;
+      letter-spacing: 1px
+    }
+
+    .btn {
+      border: 1px solid var(--wine);
+      background: var(--wine);
+      color: #fff;
+      border-radius: 999px;
+      padding: 13px 25px;
+      font: 500 12px Montserrat;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: .25s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #6f2631
+    }
+
+    .btn-light {
+      border-color: #fff;
+      background: #fff;
+      color: var(--wine)
+    }
+
+    #details {
+      background: #fff;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip
+    }
+
+    .section {
+      padding: 80px 20px
+    }
+
+    .quran-section {
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-sizing: border-box;
+    }
+
+    .quran-section .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quran-section .container>img {
+      width: min(350px, 75vw);
+      height: auto;
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .quran-section .quran {
+      width: min(800px, 90%);
+      margin: 0 auto 20px;
+
+      font-size: clamp(21px, 3vw, 32px);
+      line-height: 2;
+
+      text-align: center;
+      direction: rtl;
+    }
+
+    .quran-section .translation {
+      width: min(750px, 90%);
+      margin: 0 auto;
+
+      font-size: clamp(13px, 1.5vw, 18px);
+      line-height: 1.2;
+
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      text-align: center
+    }
+
+    .section.alt {
+      background: var(--wine)
+    }
+
+    .ornament {
+      color: var(--wine);
+      letter-spacing: 8px
+    }
+
+    .ornament2 {
+      color: var(--white);
+      letter-spacing: 8px
+    }
+
+    .section-title {
+      font-size: 44px;
+      color: var(--wine);
+      margin: 5px 0 20px;
+      line-height: 1
+    }
+
+    .section-title-quran {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: 44px;
+      color: var(--wine);
+      margin: 5px 0 20px;
+      line-height: 1
+    }
+
+    .quran {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: 20px;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .translation {
+      color: var(--muted);
+      font-size: 11px;
+      max-width: 680px;
+      margin: 18px auto
+    }
+
+    .couple {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .person {
+      padding: 15px
+    }
+
+    .person img {
+      width: min(100%, 300px);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 150px 150px 12px 12px;
+      box-shadow: 0 12px 35px #85313c22
+    }
+
+    .person h3 {
+      font-size: 23px;
+      color: var(--wine);
+      margin: 14px 0 0
+    }
+
+    .parents {
+      color: var(--muted);
+      font-size: 10px
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 680px;
+      margin: 30px auto
+    }
+
+    .timebox {
+      border: 1px solid #ead7d9;
+      padding: 15px 5px;
+      border-radius: 14px;
+      background: #fff
+    }
+
+    .timebox b {
+      font: 600 35px "Cormorant Garamond";
+      color: var(--wine);
+      display: block
+    }
+
+    .timebox span {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted)
+    }
+
+    .event-card {
+      background: #fff;
+      border: 1px solid #ead7d9;
+      border-radius: 24px;
+      padding: 30px;
+      max-width: 680px;
+      margin: 20px auto;
+      box-shadow: 0 12px 30px #85313c12
+    }
+
+    .event-card h3 {
+      color: var(--wine);
+      font-size: 30px;
+      margin: 0 0 8px
+    }
+
+    .event-card p {
+      margin: 6px
+    }
+
+    .event-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 30px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .event-cards .event-card {
+      max-width: none;
+      width: 100%;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+
+    .map {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 18px;
+      margin-top: 20px
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px
+    }
+
+    .story {
+      max-width: 720px;
+      margin: auto;
+      text-align: left
+    }
+
+    .story-item {
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px solid #ead7d9
+    }
+
+    .story-year {
+      font: 600 25px "Cormorant Garamond";
+      color: var(--wine)
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px
+    }
+
+    .gallery img {
+      width: 100%;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer
+    }
+
+    .rsvp {
+      max-width: 650px;
+      margin: auto;
+      text-align: left
+    }
+
+    .field {
+      margin: 12px 0
+    }
+
+    .field label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted)
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #ddc7ca;
+      border-radius: 10px;
+      font: 14px Montserrat;
+      background: #fff;
+      outline: none
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--wine)
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .greetings {
+      max-width: 650px;
+      margin: 35px auto 0;
+      text-align: left
+    }
+
+    .greeting {
+      padding: 16px 0;
+      border-bottom: 1px solid #ead7d9
+    }
+
+    .greeting strong {
+      color: var(--wine)
+    }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-size: 9px;
+      margin-left: 6px;
+      background: #f3e4e6;
+      color: var(--wine)
+    }
+
+    .pagination {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap
+    }
+
+    .page-btn {
+      border: 1px solid #ddc7ca;
+      background: #fff;
+      color: var(--wine);
+      padding: 7px 11px;
+      border-radius: 8px;
+      cursor: pointer
+    }
+
+    .page-btn.active {
+      background: var(--wine);
+      color: #fff
+    }
+
+    .empty {
+      color: var(--muted);
+      text-align: center
+    }
+
+    .thanks {
+      background: var(--cream);
+      color: var(--wine);
+      padding: 100px 20px
+    }
+
+    .thanks .section-title {
+      color: var(--wine)
+    }
+
+    .footer {
+      background: var(--wine);
+      padding: 20px;
+      text-align: center;
+      font-size: 10px;
+      color: #fff
+    }
+
+    .music {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      background: var(--wine);
+      color: #fff;
+      box-shadow: 0 6px 20px #0003;
+      cursor: pointer
+    }
+
+    @media(max-width:650px) {
+
+      .couple,
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .section {
+        padding: 65px 18px
+      }
+
+      .quran {
+        font-size: 21px
+      }
+
+      .story-item {
+        grid-template-columns: 70px 1fr;
+        gap: 12px
+      }
+
+      .event-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .event-cards .event-card {
+        margin: 20px 0;
+      }
+    }
+  </style>
+</head>
+
+<body style="overflow-y: auto;" data-aos-easing="ease-out-back" data-aos-duration="2000" data-aos-delay="0"
+  data-new-gr-c-s-check-loaded="14.1322.0" data-gr-ext-installed="">
+  <section id="opening" class="opening">
+    <div class="opening-inner" data-aos="fade-up" data-aos-duration="1000">
+      <div class="eyebrow" data-aos="fade-down" data-aos-delay="100">Wedding Invitation</div>
+      <div class="guest" id="guestName" data-aos="fade-up" data-aos-delay="200">Dear Guest</div>
+      <h1 data-aos="zoom-in" data-aos-delay="300">Nita & Akbar</h1>
+      <div class="invite-text" data-aos="fade-up" data-aos-delay="400">We Invite You to Celebrate Our Wedding</div>
+      <br><button class="btn btn-light" id="openBtn" data-aos="fade-up" data-aos-delay="500">Open Invitation</button>
+    </div>
+  </section>
+
+  <main id="details" class="hidden">
+    <button class="music" id="musicBtn" aria-label="Toggle music">♫</button>
+
+    <section class="section quran-section">
+      <div class="container">
+        <img src="https://www.freeiconspng.com/uploads/bismillah-png-32.jpg" width="350" alt="PNG Bismillah Clipart" />
+        <p class="quran" data-aos="fade-up" data-aos-delay="100">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ
+          أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        </p>
+        <p class="translation" data-aos="fade-up" data-aos-delay="200" style="line-height: 1.2;"><i>“Dan di antara
+            tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
+            cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”<br>(QS.
+            Ar-Rum: 21)</i></p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="ornament" style="color:#fff">THE BRIDE & GROOM</div>
+        <div class="couple" data-aos="fade-up" data-aos-duration="1000">
+          <article class="person" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="150">
+            <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=700&q=80"
+              alt="Bride">
+            <h3 style="color:#fff">dr. Nita Fitriani Wahba Nirwan</h3>
+            <div class="parents" style="color:#fff">Putri ke tiga dari </br> Dr. Ir. H. Nirwan Nasrullah, M.Si. & Ir.
+              Hj. Ida Tekstiana,
+              M.M.</div>
+          </article>
+          <article class="person" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="300">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=700&q=80"
+              alt="Groom">
+            <h3 style="color:#fff">Khaerul Akbar Karimuddin, S.Pt.</h3>
+            <div class="parents" style="color:#fff">Putra ke empat dari </br> Drs. Karimuddin & Hartini, S.Pd.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="ornament" data-aos="fade-up">SAVE THE DATE</div>
+        <h2 class="section-title" data-aos="fade-up">Our Special Day</h2>
+        <p data-aos="fade-up" style="font-size: large;color:var(--wine)"><strong>Ahad, 29 November 2026</strong></p>
+        <div class="countdown" data-aos="zoom-in">
+          <div class="timebox"><b id="days">0</b><span>DAYS</span></div>
+          <div class="timebox"><b id="hours">0</b><span>HOURS</span></div>
+          <div class="timebox"><b id="minutes">0</b><span>MINUTES</span></div>
+          <div class="timebox"><b id="seconds">0</b><span>SECONDS</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="ornament" style="color:#fff">JOIN US</div>
+        <h2 class="section-title" data-aos="fade-up" style="color:#fff">The Wedding Event</h2>
+        <div class="event-cards">
+
+          <div class="event-card" data-aos="fade-right">
+            <h3>Akad</h3>
+            <p><b>10.00 – 12.00 WITA</b></p>
+            <p style="font-size: large;"><strong>Sandeq C Ballroom, Hotel Claro</strong></p>
+            <p>Jl. A. P. Pettarani No.03, Mannuruki, Kec. Tamalate, Kota Makassar, Sulawesi Selatan</p>
+
+            <iframe class="map"
+              src="https://www.google.com/maps?q=-5.169089032799999,119.43307950925002&z=17&output=embed" loading="lazy"
+              allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="actions">
+              <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/pqyLgX9NhjSdWXsJ6">
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="event-card" data-aos="fade-left">
+            <h3>Resepsi</h3>
+            <p><b>12.00 – 15.00 WITA</b></p>
+            <p style="font-size: large;"><strong>Sandeq C Ballroom, Hotel Claro</strong></p>
+            <p>Jl. A. P. Pettarani No.03, Mannuruki, Kec. Tamalate, Kota Makassar, Sulawesi Selatan</p>
+
+            <iframe class="map"
+              src="https://www.google.com/maps?q=-5.169089032799999,119.43307950925002&z=17&output=embed" loading="lazy"
+              allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="actions">
+              <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/pqyLgX9NhjSdWXsJ6">
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rsvp">
+      <div class="container">
+        <div class="ornament">RSVP</div>
+        <h2 class="section-title" data-aos="fade-up">Will You Attend?</h2>
+        <p>Mohon konfirmasi kehadiran dan tinggalkan pesan untuk kedua mempelai.</p>
+        <form id="rsvpForm" class="rsvp" data-aos="fade-up" method="POST" target="submitFrame">
+          <div class="form-row">
+            <div class="field"><label>Nama</label><input name="name" required maxlength="80" placeholder="Nama Anda">
+            </div>
+            <div class="field"><label>Kehadiran</label><select name="attendance" required>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+                <option value="Masih Ragu">Masih Ragu</option>
+              </select></div>
+          </div>
+          <div class="field"><label>Pesan</label><textarea name="message" maxlength="500" required
+              placeholder="Ucapan untuk Nita & Akbar"></textarea></div>
+          <button class="btn" type="submit">Kirim Ucapan</button>
+          <p id="formStatus" class="empty"></p>
+        </form>
+        <iframe name="submitFrame" id="submitFrame" style="display:none"></iframe>
+
+        <div class="greetings" data-aos="fade-up">
+          <h3 style="font:600 28px 'Cormorant Garamond';color:var(--wine);text-align:center">Ucapan & Doa</h3>
+          <div id="greetingList" class="empty">Memuat ucapan...</div>
+          <div id="pagination" class="pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="ornament2">OUR MOMENTS</div>
+        <h2 class="section-title" data-aos="fade-up" style="color:#fff">Gallery</h2>
+        <div class="gallery" data-aos="zoom-in">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80"
+            alt="">
+          <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&w=700&q=80"
+            alt="">
+          <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=80"
+            alt="">
+          <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=700&q=80"
+            alt="">
+          <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=700&q=80"
+            alt="">
+          <img src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=700&q=80"
+            alt="">
+        </div>
+      </div>
+    </section>
+
+    <section class="thanks" data-aos="fade-in">
+      <div class="container">
+        <div class="ornament" style="color:#fff">THANK YOU</div>
+        <h2 class="section-title" data-aos="fade-up">Terima Kasih</h2>
+        <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+        </p>
+        <p class="script" style="font-size:28px">Nita & Akbar</p>
+      </div>
+    </section>
+    <div class="footer">With love · Nita & Akbar · 2026</div>
+  </main>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="wedding-music.wav" type="audio/wav">
+  </audio>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    /* =========================
+       CONFIGURATION
+       ========================= */
+    const CONFIG = {
+      API_URL: "https://script.google.com/macros/s/AKfycbxPFxfo79nMWELppkK8IeMN7i8XXL9pYcIAaQGoYlAN5QdRsSzZOTdkrBMNfI0S_xs/exec",
+      WEDDING_DATE: "2026-11-29T10:00:00+08:00",
+      PAGE_SIZE: 5
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const guest = (params.get("guestName") || "Guest").trim();
+    document.getElementById("guestName").textContent = "Dear " + (guest || "Guest");
+
+    const opening = document.getElementById("opening");
+    const details = document.getElementById("details");
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    async function startMusic() {
+      try {await music.play(); musicBtn.textContent = "♫";}
+      catch (e) {musicBtn.textContent = "▶";}
+    }
+    let invitationOpened = false;
+    let aosRefreshTimer = null;
+
+    function initAOS() {
+      if (typeof AOS === "undefined") return;
+      AOS.init({
+        duration: 900,
+        easing: "ease-out-cubic",
+        once: false,
+        mirror: true,
+        offset: 100,
+        anchorPlacement: "top-bottom",
+        disable: false
+      });
+    }
+
+    function refreshAOS() {
+      if (typeof AOS === "undefined") return;
+      requestAnimationFrame(() => {
+        AOS.refreshHard();
+        AOS.refresh();
+      });
+    }
+
+    document.getElementById("openBtn").addEventListener("click", async () => {
+      opening.classList.add("hidden");
+      details.classList.remove("hidden");
+      invitationOpened = true;
+      window.scrollTo({top: 0, left: 0, behavior: "auto"});
+
+      requestAnimationFrame(refreshAOS);
+      setTimeout(refreshAOS, 100);
+      setTimeout(refreshAOS, 500);
+
+      await startMusic();
+      loadGreetings();
+    });
+
+    window.addEventListener("load", () => {
+      initAOS();
+      startMusic();
+    });
+
+    window.addEventListener("resize", () => {
+      if (invitationOpened) refreshAOS();
+    });
+
+    window.addEventListener("scroll", () => {
+      if (!invitationOpened) return;
+      clearTimeout(aosRefreshTimer);
+      aosRefreshTimer = setTimeout(refreshAOS, 120);
+    }, {passive: true});
+
+    musicBtn.addEventListener("click", async () => {
+      if (music.paused) {await music.play(); musicBtn.textContent = "♫";}
+      else {music.pause(); musicBtn.textContent = "▶";}
+    });
+
+    /* Countdown */
+    function updateCountdown() {
+      const diff = new Date(CONFIG.WEDDING_DATE).getTime() - Date.now();
+      const d = Math.max(0, diff);
+      const days = Math.floor(d / 86400000);
+      const hours = Math.floor(d % 86400000 / 3600000);
+      const minutes = Math.floor(d % 3600000 / 60000);
+      const seconds = Math.floor(d % 60000 / 1000);
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    /* RSVP submission through hidden iframe to avoid CORS problems. */
+    const form = document.getElementById("rsvpForm");
+    form.addEventListener("submit", () => {
+      if (CONFIG.API_URL.startsWith("PASTE_")) {
+        document.getElementById("formStatus").textContent = "API belum dikonfigurasi. Isi API_URL terlebih dahulu.";
+        return;
+      }
+      form.action = CONFIG.API_URL;
+      document.getElementById("formStatus").textContent = "Terima kasih! Ucapan Anda sedang dikirim.";
+      setTimeout(() => {form.reset(); loadGreetings();}, 1200);
+    });
+
+    /* Greetings: GET returns all rows, sorted newest first. Page 1 = latest 5. */
+    let greetings = [];
+    let currentPage = 1;
+
+    async function loadGreetings() {
+      const el = document.getElementById("greetingList");
+      if (CONFIG.API_URL.startsWith("PASTE_")) {
+        el.innerHTML = '<div class="empty">Konfigurasikan API Google Apps Script untuk menampilkan ucapan.</div>';
+        return;
+      }
+      try {
+        const res = await fetch(CONFIG.API_URL + "?action=list");
+        const data = await res.json();
+        greetings = Array.isArray(data.data) ? data.data : [];
+        renderGreetings(1);
+      } catch (err) {
+        el.innerHTML = '<div class="empty">Ucapan belum dapat dimuat. Silakan coba lagi.</div>';
+      }
+    }
+    function escapeHtml(v) {
+      return String(v ?? "").replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'}[c]));
+    }
+    function renderGreetings(page) {
+      currentPage = page;
+      const totalPages = Math.max(1, Math.ceil(greetings.length / CONFIG.PAGE_SIZE));
+      const start = (page - 1) * CONFIG.PAGE_SIZE;
+      const rows = greetings.slice(start, start + CONFIG.PAGE_SIZE);
+      const el = document.getElementById("greetingList");
+      el.innerHTML = rows.length ? rows.map(r => `
+    <div class="greeting">
+      <strong>${escapeHtml(r.name)}</strong>
+      <span class="badge">${escapeHtml(r.attendance)}</span>
+      <div>${escapeHtml(r.message)}</div>
+    </div>`).join("") : '<div class="empty">Belum ada ucapan.</div>';
+      const pag = document.getElementById("pagination");
+      pag.innerHTML = "";
+      for (let i = 1; i <= totalPages; i++) {
+        const b = document.createElement("button");
+        b.className = "page-btn" + (i === page ? " active" : "");
+        b.textContent = i;
+        b.onclick = () => renderGreetings(i);
+        pag.appendChild(b);
+      }
+    }
+  </script>
+</body>
+
+</html>
