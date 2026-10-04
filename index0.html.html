@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#85313c">
+  <title>Nita & Akbar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+  <style>
+    :root {
+      --wine: #85313c;
+      --wine2: #a54b57;
+      --cream: #fffaf8;
+      --text: #3d3031;
+      --muted: #7e6b6d;
+      --white: #fff
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      margin: 0;
+      background: var(--white);
+      color: var(--text);
+      font-family: Montserrat, Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.8
+    }
+
+    .hidden {
+      display: none !important
+    }
+
+    h1,
+    h2,
+    h3,
+    .script {
+      font-family: "Cormorant Garamond", serif
+    }
+
+    .script {
+      font-style: italic
+    }
+
+    .opening {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(#0005, #0007), url("foto/bg.png") center/cover fixed
+    }
+
+    .opening-inner {
+      padding: 36px 22px;
+      max-width: 780px
+    }
+
+    .eyebrow {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-size: 11px
+    }
+
+    .opening h1 {
+      font-size: clamp(48px, 10vw, 92px);
+      line-height: .9;
+      margin: 20px 0
+    }
+
+    .guest {
+      font-size: clamp(20px, 4vw, 30px);
+      font-weight: 500
+    }
+
+    .invite-text {
+      font-size: 14px;
+      letter-spacing: 1px
+    }
+
+    .btn {
+      border: 1px solid var(--wine);
+      background: var(--wine);
+      color: #fff;
+      border-radius: 999px;
+      padding: 13px 25px;
+      font: 500 12px Montserrat;
+      letter-spacing: 1px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: .25s
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: #6f2631
+    }
+
+    .btn-light {
+      border-color: #fff;
+      background: #fff;
+      color: var(--wine)
+    }
+
+    #details {
+      background: #fff;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: clip
+    }
+
+    .section {
+      padding: 80px 20px
+    }
+
+    .quran-section {
+      min-height: 100vh;
+      min-height: 100svh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-sizing: border-box;
+    }
+
+    .quran-section .container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quran-section .container>img {
+      width: min(350px, 75vw);
+      height: auto;
+      display: block;
+      margin-bottom: 25px;
+    }
+
+    .quran-section .quran {
+      width: min(800px, 90%);
+      margin: 0 auto 20px;
+
+      font-size: clamp(21px, 3vw, 32px);
+      line-height: 2;
+
+      text-align: center;
+      direction: rtl;
+    }
+
+    .quran-section .translation {
+      width: min(750px, 90%);
+      margin: 0 auto;
+
+      font-size: clamp(13px, 1.5vw, 18px);
+      line-height: 1.2;
+
+      text-align: center;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      text-align: center
+    }
+
+    .section.alt {
+      background: var(--wine)
+    }
+
+    .ornament {
+      color: var(--wine);
+      letter-spacing: 8px
+    }
+
+    .ornament2 {
+      color: var(--white);
+      letter-spacing: 8px
+    }
+
+    .section-title {
+      font-size: 44px;
+      color: var(--wine);
+      margin: 5px 0 20px;
+      line-height: 1
+    }
+
+    .section-title-quran {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: 44px;
+      color: var(--wine);
+      margin: 5px 0 20px;
+      line-height: 1
+    }
+
+    .quran {
+      font-family: "Noto Naskh Arabic", serif;
+      font-size: 20px;
+      line-height: 1.7;
+      max-width: 700px;
+      margin: 0 auto
+    }
+
+    .translation {
+      color: var(--muted);
+      font-size: 11px;
+      max-width: 680px;
+      margin: 18px auto
+    }
+
+    .couple {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: center
+    }
+
+    .person {
+      padding: 15px
+    }
+
+    .person img {
+      width: min(100%, 300px);
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: 150px 150px 12px 12px;
+      box-shadow: 0 12px 35px #85313c22
+    }
+
+    .person h3 {
+      font-size: 23px;
+      color: var(--wine);
+      margin: 14px 0 0
+    }
+
+    .parents {
+      color: var(--muted);
+      font-size: 10px
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      max-width: 680px;
+      margin: 30px auto
+    }
+
+    .timebox {
+      border: 1px solid #ead7d9;
+      padding: 15px 5px;
+      border-radius: 14px;
+      background: #fff
+    }
+
+    .timebox b {
+      font: 600 35px "Cormorant Garamond";
+      color: var(--wine);
+      display: block
+    }
+
+    .timebox span {
+      font-size: 9px;
+      letter-spacing: 2px;
+      color: var(--muted)
+    }
+
+    .event-card {
+      background: #fff;
+      border: 1px solid #ead7d9;
+      border-radius: 24px;
+      padding: 30px;
+      max-width: 680px;
+      margin: 20px auto;
+      box-shadow: 0 12px 30px #85313c12
+    }
+
+    .event-card h3 {
+      color: var(--wine);
+      font-size: 30px;
+      margin: 0 0 8px
+    }
+
+    .event-card p {
+      margin: 6px
+    }
+
+    .event-cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .event-cards .event-card {
+      max-width: none;
+      width: 100%;
+      margin: 20px 0;
+      box-sizing: border-box;
+    }
+
+    .map {
+      width: 100%;
+      height: 280px;
+      border: 0;
+      border-radius: 18px;
+      margin-top: 20px
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 20px
+    }
+
+    /* === GALERI DENGAN VARIASI UKURAN (CSS GRID) === */
+    .gallery-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(0.9);
+    }
+
+    /* Layout Desktop (min 768px) sesuai contoh gambar */
+    @media(min-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 400px;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 6;
+      }
+
+      /* Baris 1: Full */
+      .gallery-item:nth-child(2) {
+        grid-column: span 2;
+      }
+
+      /* Baris 2: Kiri kecil */
+      .gallery-item:nth-child(3) {
+        grid-column: span 4;
+      }
+
+      /* Baris 2: Kanan besar */
+      .gallery-item:nth-child(4) {
+        grid-column: span 4;
+      }
+
+      /* Baris 3: Kiri besar */
+      .gallery-item:nth-child(5) {
+        grid-column: span 2;
+      }
+
+      /* Baris 3: Kanan kecil */
+      .gallery-item:nth-child(6) {
+        grid-column: span 6;
+      }
+
+      /* Baris 4: Full */
+      .gallery-item:nth-child(n+7) {
+        grid-column: span 3;
+      }
+
+      /* Sisanya dibagi dua */
+    }
+
+    /* Layout Mobile */
+    @media(max-width: 767px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+      }
+
+      .gallery-item:nth-child(2) {
+        grid-column: span 1;
+      }
+
+      .gallery-item:nth-child(3) {
+        grid-column: span 1;
+      }
+
+      .gallery-item:nth-child(4) {
+        grid-column: span 2;
+      }
+
+      .gallery-item:nth-child(5) {
+        grid-column: span 1;
+      }
+
+      .gallery-item:nth-child(6) {
+        grid-column: span 1;
+      }
+
+      .gallery-item:nth-child(n+7) {
+        grid-column: span 2;
+      }
+    }
+
+    /* === LIGHTBOX FULLSCREEN SLIDER === */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-content {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 85vh;
+      object-fit: contain;
+      border-radius: 8px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .lightbox-btn {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      border: none;
+      font-size: 24px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(4px);
+      transition: background 0.2s ease, transform 0.2s ease;
+      user-select: none;
+      z-index: 10000;
+    }
+
+    .lightbox-btn:hover {
+      background: rgba(255, 255, 255, 0.35);
+      transform: scale(1.1);
+    }
+
+    .lightbox-close {
+      top: 20px;
+      right: 20px;
+    }
+
+    .lightbox-prev {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-prev:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-next {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lightbox-next:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .lightbox-counter {
+      position: absolute;
+      bottom: 20px;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    /* === MODAL TANDA KASIH === */
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      backdrop-filter: blur(3px);
+    }
+
+    .modal.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s ease;
+    }
+
+    .modal.active .modal-content {
+      transform: translateY(0);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--muted);
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      background: var(--cream);
+      color: var(--wine);
+      border: 1px solid var(--wine);
+      padding: 8px 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+
+    .copy-btn:hover {
+      background: var(--wine);
+      color: #fff;
+    }
+
+    .rsvp {
+      max-width: 650px;
+      margin: auto;
+      text-align: left
+    }
+
+    .field {
+      margin: 12px 0
+    }
+
+    .field label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--muted)
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border: 1px solid #ddc7ca;
+      border-radius: 10px;
+      font: 14px Montserrat;
+      background: #fff;
+      outline: none
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--wine)
+    }
+
+    textarea {
+      min-height: 100px;
+      resize: vertical
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px
+    }
+
+    .greetings {
+      max-width: 650px;
+      margin: 35px auto 0;
+      text-align: left
+    }
+
+    .greeting {
+      padding: 16px 0;
+      border-bottom: 1px solid #ead7d9
+    }
+
+    .greeting strong {
+      color: var(--wine)
+    }
+
+    .badge {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 2px 9px;
+      font-size: 9px;
+      margin-left: 6px;
+      background: #f3e4e6;
+      color: var(--wine)
+    }
+
+    .pagination {
+      display: flex;
+      gap: 6px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap
+    }
+
+    .page-btn {
+      border: 1px solid #ddc7ca;
+      background: #fff;
+      color: var(--wine);
+      padding: 7px 11px;
+      border-radius: 8px;
+      cursor: pointer
+    }
+
+    .page-btn.active {
+      background: var(--wine);
+      color: #fff
+    }
+
+    .empty {
+      color: var(--muted);
+      text-align: center
+    }
+
+    .thanks {
+      background: var(--cream);
+      color: var(--wine);
+      padding: 100px 20px
+    }
+
+    .thanks .section-title {
+      color: var(--wine)
+    }
+
+    .footer {
+      background: var(--wine);
+      padding: 20px;
+      text-align: center;
+      font-size: 10px;
+      color: #fff
+    }
+
+    .music {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 20;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 1px solid #fff;
+      background: var(--wine);
+      color: #fff;
+      box-shadow: 0 6px 20px #0003;
+      cursor: pointer
+    }
+
+    @media(max-width:650px) {
+
+      .couple,
+      .form-row {
+        grid-template-columns: 1fr
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .section {
+        padding: 65px 18px
+      }
+
+      .quran {
+        font-size: 21px
+      }
+
+      .event-cards {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .event-cards .event-card {
+        margin: 20px 0;
+      }
+
+      .lightbox-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+      }
+
+      .lightbox-prev {
+        left: 10px;
+      }
+
+      .lightbox-next {
+        right: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body style="overflow-y: auto;" data-aos-easing="ease-out-back" data-aos-duration="2000" data-aos-delay="0">
+  <section id="opening" class="opening">
+    <div class="opening-inner" data-aos="fade-up" data-aos-duration="1000">
+      <div class="eyebrow" data-aos="fade-down" data-aos-delay="100">The Wedding of</div>
+      <h1 data-aos="zoom-in" data-aos-delay="300">Nita & Akbar</h1>
+      <div class="invite-text" data-aos="fade-up" data-aos-delay="400">Kepada yth</div>
+      <div class="guest" id="guestName" data-aos="fade-up" data-aos-delay="200">Guest</div>
+      <div data-aos="fade-up" data-aos-delay="400" style="font-size: x-small;">*Mohon maaf jika ada
+        kesalahan<br>penulisan nama & gelar.</div>
+      <br><button class="btn btn-light" id="openBtn" data-aos="fade-up" data-aos-delay="500">Open Invitation</button>
+    </div>
+  </section>
+
+  <main id="details" class="hidden">
+    <button class="music" id="musicBtn" aria-label="Toggle music">♫</button>
+
+    <section class="section quran-section">
+      <div class="container">
+        <img src="https://www.freeiconspng.com/uploads/bismillah-png-32.jpg" width="350" alt="PNG Bismillah Clipart" />
+        <p class="quran" data-aos="fade-up" data-aos-delay="100">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُمْ مِنْ أَنْفُسِكُمْ
+          أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+        </p>
+        <p class="translation" data-aos="fade-up" data-aos-delay="200" style="line-height: 1.2;"><i>“Dan di antara
+            tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
+            cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.”<br>(QS.
+            Ar-Rum: 21)</i></p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="ornament" style="color:#fff">THE BRIDE & GROOM</div>
+        <div class="couple" data-aos="fade-up" data-aos-duration="1000">
+          <article class="person" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="150">
+            <img src="foto/nita.png" alt="Bride">
+            <h3 style="color:#fff">dr. Nita Fitriani Wahba Nirwan</h3>
+            <div class="parents" style="color:#fff">Putri ke tiga dari <br> Dr. Ir. H. Nirwan Nasrullah, M.Si. & Ir.
+              Hj. Ida Tekstiana,
+              M.M.</div>
+          </article>
+          <article class="person" data-aos="zoom-in-left" data-aos-duration="1000" data-aos-delay="300">
+            <img src="foto/akbar.png" alt="Groom">
+            <h3 style="color:#fff">Khaerul Akbar Karimuddin, S.Pt.</h3>
+            <div class="parents" style="color:#fff">Putra ke empat dari <br> Drs. Karimuddin & Hartini, S.Pd.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="ornament" data-aos="fade-up">SAVE THE DATE</div>
+        <h2 class="section-title" data-aos="fade-up">Our Special Day</h2>
+        <p data-aos="fade-up" style="font-size: large;color:var(--wine)"><strong>Ahad, 29 November 2026</strong></p>
+        <div class="countdown" data-aos="zoom-in">
+          <div class="timebox"><b id="days">0</b><span>DAYS</span></div>
+          <div class="timebox"><b id="hours">0</b><span>HOURS</span></div>
+          <div class="timebox"><b id="minutes">0</b><span>MINUTES</span></div>
+          <div class="timebox"><b id="seconds">0</b><span>SECONDS</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="ornament" style="color:#fff">JOIN US</div>
+        <h2 class="section-title" data-aos="fade-up" style="color:#fff">The Wedding Event</h2>
+        <div class="event-cards">
+
+          <div class="event-card" data-aos="fade-right">
+            <h3>Akad</h3>
+            <p><b>10.00 – 12.00 WITA</b></p>
+            <p style="font-size: large;"><strong>Sandeq C Ballroom, Hotel Claro</strong></p>
+            <p>Jl. A. P. Pettarani No.03, Mannuruki, Kec. Tamalate, Kota Makassar, Sulawesi Selatan</p>
+
+            <iframe class="map"
+              src="https://www.google.com/maps?q=-5.169089032799999,119.43307950925002&z=17&output=embed" loading="lazy"
+              allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="actions">
+              <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/pqyLgX9NhjSdWXsJ6">
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="event-card" data-aos="fade-left">
+            <h3>Resepsi Makassar</h3>
+            <p><b>12.00 – 15.00 WITA</b></p>
+            <p style="font-size: large;"><strong>Sandeq C Ballroom, Hotel Claro</strong></p>
+            <p>Jl. A. P. Pettarani No.03, Mannuruki, Kec. Tamalate, Kota Makassar, Sulawesi Selatan</p>
+
+            <iframe class="map"
+              src="https://www.google.com/maps?q=-5.169089032799999,119.43307950925002&z=17&output=embed" loading="lazy"
+              allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="actions">
+              <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/pqyLgX9NhjSdWXsJ6">
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+
+          <div class="event-card" data-aos="fade-left">
+            <h3>Resepsi Bone</h3>
+            <p><b>10.00 – 15.00 WITA</b></p>
+            <p style="font-size: large;"><strong>The Palm Tree</strong></p>
+            <p>Jl. Reformasi, Macanang, Kec. Tanete Riattang Bar., Kab. Bone, Sulawesi Selatan</p>
+
+            <iframe class="map"
+              src="https://www.google.com/maps?q=-4.547644939124118, 120.30675845685587&z=17&output=embed"
+              loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+
+            <div class="actions">
+              <a class="btn" target="_blank" rel="noopener" href="https://maps.app.goo.gl/vmySR6x6tHAp64Pj9">
+                Open Google Maps
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="rsvp">
+      <div class="container">
+        <div class="ornament">RSVP</div>
+        <h2 class="section-title" data-aos="fade-up">Will You Attend?</h2>
+        <p>Mohon konfirmasi kehadiran dan tinggalkan pesan untuk kedua mempelai.</p>
+        <form id="rsvpForm" class="rsvp" data-aos="fade-up" method="POST" target="submitFrame">
+          <div class="form-row">
+            <div class="field"><label>Nama</label><input name="name" required maxlength="80" placeholder="Nama Anda">
+            </div>
+            <div class="field"><label>Kehadiran</label><select name="attendance" required>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+                <option value="Masih Ragu">Masih Ragu</option>
+              </select></div>
+          </div>
+          <div class="field"><label>Pesan</label><textarea name="message" maxlength="500" required
+              placeholder="Ucapan untuk Nita & Akbar"></textarea></div>
+          <button class="btn" type="submit">Kirim Ucapan</button>
+          <p id="formStatus" class="empty"></p>
+        </form>
+        <iframe name="submitFrame" id="submitFrame" style="display:none"></iframe>
+
+        <div class="greetings" data-aos="fade-up">
+          <h3 style="font:600 28px 'Cormorant Garamond';color:var(--wine);text-align:center">Ucapan & Doa</h3>
+          <div id="greetingList" class="empty">Memuat ucapan...</div>
+          <div id="pagination" class="pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION TANDA KASIH -->
+    <section class="section" style="background-color: var(--cream);">
+      <div class="container">
+        <div class="ornament">WEDDING GIFT</div>
+        <h2 class="section-title" data-aos="fade-up">Tanda Kasih</h2>
+        <p data-aos="fade-up">Bagi keluarga dan sahabat yang ingin memberikan tanda kasih, dapat mengirimkan melalui
+          fitur di bawah ini:</p>
+
+        <div class="actions" data-aos="fade-up" style="margin-top: 30px;">
+          <button class="btn btn-light" style="border-color: var(--wine);" onclick="openModal('modalBank')">💳 Transfer Bank</button>
+          <button class="btn btn-light" style="border-color: var(--wine);" onclick="openModal('modalAddress')">🎁 Kirim Hadiah</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION GALERI DENGAN CSS GRID -->
+    <section class="section alt">
+      <div class="container">
+        <div class="ornament2">OUR MOMENTS</div>
+        <h2 class="section-title" data-aos="fade-up" style="color:#fff">Gallery</h2>
+        <div class="gallery-grid" data-aos="zoom-in">
+          <div class="gallery-item"><img src="foto/foto3.jpg" alt="Gallery Photo 1"></div>
+          <div class="gallery-item"><img src="foto/foto1.jpg" alt="Gallery Photo 2"></div>
+          <div class="gallery-item"><img src="foto/foto4.jpg" alt="Gallery Photo 3"></div>
+          <div class="gallery-item"><img src="foto/foto6.jpg" alt="Gallery Photo 4"></div>
+          <div class="gallery-item"><img src="foto/foto2.jpg" alt="Gallery Photo 5"></div>
+          <div class="gallery-item"><img src="foto/foto5.jpg" alt="Gallery Photo 6"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="thanks" data-aos="fade-in">
+      <div class="container">
+        <div class="ornament" style="color:#fff">THANK YOU</div>
+        <h2 class="section-title" data-aos="fade-up">Terima Kasih</h2>
+        <p>Merupakan suatu kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu.
+        </p>
+        <p class="script" style="font-size:28px">Nita & Akbar</p>
+      </div>
+    </section>
+    <div class="footer">With love · Nita & Akbar · 2026</div>
+  </main>
+
+  <!-- MODAL TRANSFER BANK -->
+  <div id="modalBank" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modalBank')">&times;</button>
+      <h3 style="color: var(--wine); margin-top: 0; font-family: 'Cormorant Garamond', serif; font-size: 28px;">Transfer
+        Bank</h3>
+      <p><strong>BCA</strong><br>1234567890<br>a.n. Nita Fitriani Wahba Nirwan</p>
+      <button class="copy-btn" onclick="copyText('1234567890', this)">Salin No. Rekening</button>
+
+      <hr style="border: 0; border-top: 1px dashed #ddc7ca; margin: 20px 0;">
+
+      <p><strong>Mandiri</strong><br>0987654321<br>a.n. Khaerul Akbar Karimuddin</p>
+      <button class="copy-btn" onclick="copyText('0987654321', this)">Salin No. Rekening</button>
+    </div>
+  </div>
+
+  <!-- MODAL ALAMAT -->
+  <div id="modalAddress" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal('modalAddress')">&times;</button>
+      <h3 style="color: var(--wine); margin-top: 0; font-family: 'Cormorant Garamond', serif; font-size: 28px;">Kirim
+        Hadiah</h3>
+      <p><strong>Nama Penerima:</strong><br>Nita Fitriani</p>
+      <p><strong>Alamat:</strong><br>Jl. Green Garden Utara No. 9, Kelurahan Tanjung Merdeka, Kec. Tamalate, Kota Makassar,
+        Sulawesi Selatan</p>
+      <button class="copy-btn"
+        onclick="copyText('Jl. Green Garden Utara No. 9, Kelurahan Tanjung Merdeka, Kec. Tamalate, Kota Makassar, Sulawesi Selatan', this)">Salin
+        Alamat</button>
+    </div>
+  </div>
+
+  <!-- ELEMENT LIGHTBOX OVERLAY -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-btn lightbox-close" id="lightboxClose">&times;</button>
+    <button class="lightbox-btn lightbox-prev" id="lightboxPrev">&#10094;</button>
+    <div class="lightbox-content">
+      <img src="" alt="Fullscreen Image" id="lightboxImg" class="lightbox-img">
+    </div>
+    <button class="lightbox-btn lightbox-next" id="lightboxNext">&#10095;</button>
+    <div class="lightbox-counter" id="lightboxCounter">1 / 6</div>
+  </div>
+
+  <audio id="bgMusic" loop preload="auto">
+    <source src="music.mp3" type="audio/wav">
+  </audio>
+
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    /* =========================
+       CONFIGURATION
+       ========================= */
+    const CONFIG = {
+      API_URL: "https://script.google.com/macros/s/AKfycbxPFxfo79nMWELppkK8IeMN7i8XXL9pYcIAaQGoYlAN5QdRsSzZOTdkrBMNfI0S_xs/exec",
+      WEDDING_DATE: "2026-11-29T10:00:00+08:00",
+      PAGE_SIZE: 5
+    };
+
+    const params = new URLSearchParams(window.location.search);
+    const guest = (params.get("guestName") || "Guest").trim();
+    document.getElementById("guestName").textContent = "Dear " + (guest || "Guest");
+
+    const opening = document.getElementById("opening");
+    const details = document.getElementById("details");
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicBtn");
+
+    async function startMusic() {
+      try {await music.play(); musicBtn.textContent = "♫";}
+      catch (e) {musicBtn.textContent = "▶";}
+    }
+    let invitationOpened = false;
+    let aosRefreshTimer = null;
+
+    function initAOS() {
+      if (typeof AOS === "undefined") return;
+      AOS.init({
+        duration: 900,
+        easing: "ease-out-cubic",
+        once: false,
+        mirror: true,
+        offset: 100,
+        anchorPlacement: "top-bottom",
+        disable: false
+      });
+    }
+
+    function refreshAOS() {
+      if (typeof AOS === "undefined") return;
+      requestAnimationFrame(() => {
+        AOS.refreshHard();
+        AOS.refresh();
+      });
+    }
+
+    document.getElementById("openBtn").addEventListener("click", async () => {
+      opening.classList.add("hidden");
+      details.classList.remove("hidden");
+      invitationOpened = true;
+      window.scrollTo({top: 0, left: 0, behavior: "auto"});
+
+      requestAnimationFrame(refreshAOS);
+      setTimeout(refreshAOS, 100);
+      setTimeout(refreshAOS, 500);
+
+      await startMusic();
+      loadGreetings();
+    });
+
+    window.addEventListener("load", () => {
+      initAOS();
+      startMusic();
+      initLightbox();
+    });
+
+    window.addEventListener("resize", () => {
+      if (invitationOpened) refreshAOS();
+    });
+
+    window.addEventListener("scroll", () => {
+      if (!invitationOpened) return;
+      clearTimeout(aosRefreshTimer);
+      aosRefreshTimer = setTimeout(refreshAOS, 120);
+    }, {passive: true});
+
+    musicBtn.addEventListener("click", async () => {
+      if (music.paused) {await music.play(); musicBtn.textContent = "♫";}
+      else {music.pause(); musicBtn.textContent = "▶";}
+    });
+
+    /* Countdown */
+    function updateCountdown() {
+      const diff = new Date(CONFIG.WEDDING_DATE).getTime() - Date.now();
+      const d = Math.max(0, diff);
+      const days = Math.floor(d / 86400000);
+      const hours = Math.floor(d % 86400000 / 3600000);
+      const minutes = Math.floor(d % 3600000 / 60000);
+      const seconds = Math.floor(d % 60000 / 1000);
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+    }
+    updateCountdown(); setInterval(updateCountdown, 1000);
+
+    /* RSVP submission */
+    const form = document.getElementById("rsvpForm");
+    form.addEventListener("submit", () => {
+      if (CONFIG.API_URL.startsWith("PASTE_")) {
+        document.getElementById("formStatus").textContent = "API belum dikonfigurasi. Isi API_URL terlebih dahulu.";
+        return;
+      }
+      form.action = CONFIG.API_URL;
+      document.getElementById("formStatus").textContent = "Terima kasih! Ucapan Anda sedang dikirim.";
+      setTimeout(() => {form.reset(); loadGreetings();}, 1200);
+    });
+
+    /* Greetings */
+    let greetings = [];
+    let currentPage = 1;
+
+    async function loadGreetings() {
+      const el = document.getElementById("greetingList");
+      if (CONFIG.API_URL.startsWith("PASTE_")) {
+        el.innerHTML = '<div class="empty">Konfigurasikan API Google Apps Script untuk menampilkan ucapan.</div>';
+        return;
+      }
+      try {
+        const res = await fetch(CONFIG.API_URL + "?action=list");
+        const data = await res.json();
+        greetings = Array.isArray(data.data) ? data.data : [];
+        renderGreetings(1);
+      } catch (err) {
+        el.innerHTML = '<div class="empty">Ucapan belum dapat dimuat. Silakan coba lagi.</div>';
+      }
+    }
+    function escapeHtml(v) {
+      return String(v ?? "").replace(/[&<>"']/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;'}[c]));
+    }
+    function renderGreetings(page) {
+      currentPage = page;
+      const totalPages = Math.max(1, Math.ceil(greetings.length / CONFIG.PAGE_SIZE));
+      const start = (page - 1) * CONFIG.PAGE_SIZE;
+      const rows = greetings.slice(start, start + CONFIG.PAGE_SIZE);
+      const el = document.getElementById("greetingList");
+      el.innerHTML = rows.length ? rows.map(r => `
+    <div class="greeting">
+      <strong>${escapeHtml(r.name)}</strong>
+      <span class="badge">${escapeHtml(r.attendance)}</span>
+      <div>${escapeHtml(r.message)}</div>
+    </div>`).join("") : '<div class="empty">Belum ada ucapan.</div>';
+      const pag = document.getElementById("pagination");
+      pag.innerHTML = "";
+      for (let i = 1; i <= totalPages; i++) {
+        const b = document.createElement("button");
+        b.className = "page-btn" + (i === page ? " active" : "");
+        b.textContent = i;
+        b.onclick = () => renderGreetings(i);
+        pag.appendChild(b);
+      }
+    }
+
+    /* =========================
+       LIGHTBOX GALLERY LOGIC
+       ========================= */
+    function initLightbox() {
+      // PERUBAHAN: Menyesuaikan selector menjadi .gallery-grid img
+      const galleryImages = Array.from(document.querySelectorAll('.gallery-grid img'));
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxCounter = document.getElementById('lightboxCounter');
+      const closeBtn = document.getElementById('lightboxClose');
+      const prevBtn = document.getElementById('lightboxPrev');
+      const nextBtn = document.getElementById('lightboxNext');
+
+      let currentIndex = 0;
+      let touchStartX = 0;
+      let touchEndX = 0;
+
+      function updateLightbox() {
+        if (galleryImages.length === 0) return;
+        lightboxImg.src = galleryImages[currentIndex].src;
+        lightboxCounter.textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+      }
+
+      function openLightbox(index) {
+        currentIndex = index;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      function showPrev() {
+        currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+        updateLightbox();
+      }
+
+      function showNext() {
+        currentIndex = (currentIndex + 1) % galleryImages.length;
+        updateLightbox();
+      }
+
+      // Event listener klik gambar galeri
+      galleryImages.forEach((img, idx) => {
+        img.parentNode.addEventListener('click', () => openLightbox(idx));
+      });
+
+      // Tombol kendali
+      closeBtn.addEventListener('click', closeLightbox);
+      prevBtn.addEventListener('click', (e) => {e.stopPropagation(); showPrev();});
+      nextBtn.addEventListener('click', (e) => {e.stopPropagation(); showNext();});
+
+      // Klik latar belakang hitam untuk menutup
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+          closeLightbox();
+        }
+      });
+
+      // Navigasi keyboard (Panah Kiri, Panah Kanan, Escape)
+      window.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') showPrev();
+        if (e.key === 'ArrowRight') showNext();
+      });
+
+      // Navigasi gesture swipe untuk mobile
+      lightbox.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      }, {passive: true});
+
+      lightbox.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+      }, {passive: true});
+
+      function handleSwipe() {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) showNext();
+        if (touchEndX > touchStartX + threshold) showPrev();
+      }
+    }
+
+    /* =========================
+       MODAL & COPY LOGIC
+       ========================= */
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+      document.body.style.overflow = 'hidden'; // Mencegah scroll di background
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function copyText(text, btnElement) {
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btnElement.innerText;
+        btnElement.innerText = 'Berhasil Disalin!';
+        btnElement.style.background = 'var(--wine)';
+        btnElement.style.color = '#fff';
+
+        setTimeout(() => {
+          btnElement.innerText = originalText;
+          btnElement.style.background = 'var(--cream)';
+          btnElement.style.color = 'var(--wine)';
+        }, 2000);
+      });
+    }
+
+    // Tutup modal jika area luar pop-up diklik
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          closeModal(modal.id);
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
