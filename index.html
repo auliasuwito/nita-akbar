@@ -1051,7 +1051,7 @@
 
     const params = new URLSearchParams(window.location.search);
     const guest = (params.get("guestName") || "Guest").trim();
-    document.getElementById("guestName").textContent = "Dear " + (guest || "Guest");
+    document.getElementById("guestName").textContent = (guest || "Guest");
 
     const opening = document.getElementById("opening");
     const details = document.getElementById("details");
@@ -1140,7 +1140,7 @@
     const form = document.getElementById("rsvpForm");
     form.addEventListener("submit", () => {
       if (CONFIG.API_URL.startsWith("PASTE_")) {
-        document.getElementById("formStatus").textContent = "API belum dikonfigurasi. Isi API_URL terlebih dahulu.";
+        document.getElementById("formStatus").textContent = "API belum dikonfigurasi.";
         return;
       }
       form.action = CONFIG.API_URL;
